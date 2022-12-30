@@ -3,6 +3,7 @@ import FormPersonalDetail from "./FormPersonalDetail";
 import FormUserDetail from "./FormUserDetail";
 import Confirm from "./Confirm";
 import Success from "./Success";
+import { Typography } from "@mui/material";
 
 const UserForm = () => {
   const formTitles = ["Personal Details", "User Details", "Confirm", "Finish"];
@@ -26,11 +27,11 @@ const UserForm = () => {
     switch(step){
       case 0:
         return (
-          <FormPersonalDetail nextStep={nextStep} prevStep={prevStep} formData={formData} />
+          <FormPersonalDetail nextStep={nextStep} prevStep={prevStep} formData={formData} setFormData={setFormData} />
         )
       case 1:
         return (
-          <FormUserDetail nextStep={nextStep} prevStep={prevStep} formData={formData} />
+          <FormUserDetail nextStep={nextStep} prevStep={prevStep} formData={formData} setFormData={setFormData} />
         )
       case 2:
         return (
@@ -44,10 +45,9 @@ const UserForm = () => {
         return (<FormPersonalDetail nextStep={nextStep} prevStep={prevStep} formData={formData} />)
     }
   }
-
   return (
-    <div>
-      <h4>{formTitles[step]}</h4>
+    <div style={{width:"300px", margin:"auto"}}>
+      <Typography sx={{marginTop:"110px"}} variant="h4">{formTitles[step]}</Typography>
       {formsToDisplay()}      
     </div>
   );

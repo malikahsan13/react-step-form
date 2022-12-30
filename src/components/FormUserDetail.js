@@ -1,34 +1,40 @@
 import React from 'react'
-import { FormGroup, FormLabel, TextField, Button, Typography } from "@mui/material";
+import { FormGroup, FormLabel, TextField, Button } from "@mui/material";
 import { Box } from "@mui/system";
 
-const FormUserDetail = ({nextStep, prevStep, formData}) => {
+const FormUserDetail = ({nextStep, prevStep, formData, setFormData}) => {
   return (
     <div>
       <Box sx={{ width:"300px", margin:"auto"}} backgroundColor="primary.blue">
-       <form style={{marginTop:"130px"}}>
+       <form style={{marginTop:"50px"}}>
           <FormGroup>
             <FormLabel>Occupation</FormLabel>
             <TextField
+              value={formData.occupation}
               type="text"
               variant="standard"
               placeholder="Enter Occupation"
+              onChange={(e)=>setFormData({...formData, occupation: e.target.value})}
             />
           </FormGroup>
           <FormGroup sx={{marginTop:"15px"}}>
             <FormLabel>Bio</FormLabel>
             <TextField
+              value={formData.bio}
               type="text"
               variant="standard"
               placeholder="Enter Bio"
+              onChange={(e)=>setFormData({...formData, bio: e.target.value})}
             />
           </FormGroup>
           <FormGroup sx={{marginTop:"15px"}}>
             <FormLabel>City</FormLabel>
             <TextField
+              value={formData.city}
               type="text"
               variant="standard"
               placeholder="Enter City"
+              onChange={(e)=>setFormData({...formData, city: e.target.value})}
             />
           </FormGroup>
           <FormGroup sx={{display:"flex", flexDirection:"row", marginTop:"15px"}}>

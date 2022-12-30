@@ -1,6 +1,6 @@
 import React from "react";
 import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
-import { Box, AppBar, Toolbar, Typography, IconButton } from "@mui/material";
+import { AppBar, Toolbar, Typography, IconButton } from "@mui/material";
 
 const Navbar = () => {
   return (
